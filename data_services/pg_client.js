@@ -1,7 +1,7 @@
 //Client to stablish the connection with postgres database
 const { Pool } = require('pg');
 // read virtual environment variables
-require('dotenv').config();
+
 
 const pool  = new Pool
 ({

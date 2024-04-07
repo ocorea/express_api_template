@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router()
-const bodyParser = require('body-parser');
-
+const { query, validationResult, matchedData, param } = require('express-validator')
 //import the Postgres dataservice client
 const pgClient = require('../data_services/pg_client');
 
+
+//TODO: Validation input
 
 router.get('/orders', (req, res) => {
     try {

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { query, validationResult, matchedData, param } = require('express-validator')
+const { query,body, validationResult, matchedData, param } = require('express-validator')
 
 //using mongoose schema and current client
 //import the mongoose database connection
@@ -13,12 +13,15 @@ const validateGetHello=()=> {
         query('person').notEmpty().escape().trim(),
         query('edad').notEmpty().isNumeric(),
         param('peso').isNumeric(),
+        //validation of body
+        //body('name').notEmpty().escape().trim(),
     
        
     ]
 };
 
 router.get('/hello/:peso',validateGetHello(),(req, res) => {
+    //ADD Try xatch block
     const result = validationResult(req);
     if (result.isEmpty()) {
         //ejecutar el codigo normal que se espera cuando todos los datos son enviados

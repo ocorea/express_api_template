@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router()
-const bodyParser = require('body-parser');
 const { query, validationResult, matchedData, param } = require('express-validator')
 
 //call the MongoDB client
@@ -11,6 +10,7 @@ const productSchema = new mongoClient.Schema({});
 const Products = mongoClient.model('Products', productSchema, 'products');
 
 
+//TODO: Validation inputs
 
 router.get('/products', (req, res) => {
     try {

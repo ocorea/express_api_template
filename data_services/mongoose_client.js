@@ -1,4 +1,3 @@
-const express = require('express');
 const mongoose = require('mongoose');
 
 
@@ -7,8 +6,8 @@ const mongoose = require('mongoose');
 try{
     mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
     console.log('Mongoose connection created');
-}catch{
-    console.log('Error creating mongoose connection');
+}catch(err){
+    console.log('Error creating mongoose connection: ' + err);
 }
 
 
